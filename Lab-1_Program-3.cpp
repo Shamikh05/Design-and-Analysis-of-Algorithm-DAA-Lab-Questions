@@ -5,6 +5,7 @@ using namespace std;
 int main() {
 
         vector<int> v;
+        vector<int> result;
         queue<int> q;
 
         int n;
@@ -22,16 +23,19 @@ int main() {
 
                 if(v[i]%2!=0) {
                         q.push(v[i]);
-                        v.erase(v.begin()+i);
+                        //v.erase(v.begin()+i);
+                }
+                else {
+                        result.push_back(v[i]);
                 }
         }
 
         while(!q.empty()) {
-                v.push_back(q.front());
+                result.push_back(q.front());
                 q.pop();
         }
 
-        for(auto it : v) {
+        for(auto it : result) {
                 cout << it << " ";
         }
 
